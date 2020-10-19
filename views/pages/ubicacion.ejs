@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es" >
+  <head>
+    <%- include('../partials/head'); %>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+  </head>
+  <body>
+    <%- include('../partials/navbar'); %>
+
+    <div class="jumbotron jumbotron-fluid" id="numero2">
+      <div class="container">
+        <h1 class="display-4">En este lugar es donde te encuentras:</h1>
+        <!-- Inicio del mapa  -->
+        <div id="map-template">
+          
+        </div>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+      </div>
+    </div>
+    
+     
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="./javascripts/ubicacion.js"></script>
+    <%- include('../partials/script'); %>
+  </body>
+</html>
