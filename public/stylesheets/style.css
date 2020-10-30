@@ -1,46 +1,87 @@
-
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  background-color: #283747 ;
- 
+  background-color: #283747;
 }
 
-#numero{
+#numero {
   background-color: #1F2327;
   color: white;
 }
-#navbar{
+
+#navbar {
   color: white;
 }
+
 a {
   color: #00B7FF;
 }
 
 /* personalizacion del mapa */
-#map-template{
+#map-template {
   height: 50%;
   width: 73%;
   top: 2;
   position: absolute;
-  
 }
-#numero2{
+
+#numero2 {
   background-color: #1F2327;
   color: white;
   height: 500hv;
   width: 100%;
-  
-  
 }
+
 /* Red social */
-#negro{
+#negro {
   background-color: white;
 }
-#twitter{
+
+#twitter {
   background-color: #1F2327;
 }
-#numero3{
+
+#numero3 {
   background-color: #1F2327;
   color: white;
+}
+
+/* Otra API Pokemon */
+.logo {
+  display: block;
+  margin: auto;
+  margin-bottom: 20px;
+  width: 250px;
+  height: 100px;
+}
+
+.contenedor {
+  text-align: center;
+  margin: 0 auto;
+  height: 300px;
+  width: 350px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+}
+
+.contenedor input {
+  text-align: center;
+}
+
+.contenedor button {
+  margin-top: 20px;
+  margin-bottom: -30px;
+}
+
+.pokemon {
+  width: 150px;
+  height: 150px;
+  margin: 40px auto;
+  display: inline-block;
+}
+
+p {
+  margin-top: -60px;
 }

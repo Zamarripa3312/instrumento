@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Pokemon</title>
+    <%- include('../partials/head'); %>
+  </head>
+  <body>
+    <%- include('../partials/navbar'); %>
+
+    <div class="jumbotron jumbotron-fluid" id="numero">
+      <div class="container">
+        <h1 class="display-4">Busca a tu Pokemon</h1>
+        <img src="./images/logo.png" class="logo" alt="">
+          <div class="contenedor">
+            <input type="text" id="caja" placeholder="Ingrese Un Numero">
+            <button class="text-white btn bg-danger" id="button">Buscar</button>
+            <img src="" id="img" class="pokemon" alt="">
+            <p id="info" class="text-white"></p>
+        </div>
+      </div>
+    </div>
+
+    <script src="./javascripts/pokemon.js"></script>
+
+  </body>
+</html>

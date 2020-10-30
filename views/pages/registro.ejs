@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Registro</title>
+  <%- include('../partials/head'); %>
+</head>
+
+<body>
+  <%- include('../partials/navbar'); %>
+
+  <div class="jumbotron jumbotron-fluid" id="numero">
+    <div class="container">
+      <h1 class="display-4">Registrate</h1>
+      <div class="">
+        <div class="container">
+
+          <div class="row">
+            <!--FORM-->
+            <div class="col-md-5">
+              <div class="card">
+                <div class="card-body">
+                  <form action="/add" method="post">
+                    <div class="form-group">
+                      <input class="form-control" type="text" name="NumeroDeControl" placeholder="Numero de Control">
+                    </div>
+                    <div class="form-group">
+                      <input class="form-control" type="text" name="Nombre" placeholder="Nombre">
+                    </div>
+                    <div class="form-group">
+                      <input class="form-control" type="text" name="Apellidos" placeholder="Apellidos">
+                    </div>
+                    <div class="form-group">
+                      <input class="form-control" type="text" name="FechaDeNacimiento" placeholder="Fecha de Nacimiento">
+                    </div>
+                    <div class="form-group">
+                      <input class="form-control" type="text" name="Edad" placeholder="Edad">
+                    </div>
+                    <div class="form-group">
+                      <input class="form-control" type="text" name="CiudadDeNacimiento" placeholder="Ciudad de Nacimiento">
+                    </div>
+                    <div class="form-group">
+                    </div>
+                    <button class="btn btn-primary btn-block" type="submit">
+                      Guardar
+                    </button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          <img src="./images/registro.png" alt="" width="400">
+</body>
+
+</html>

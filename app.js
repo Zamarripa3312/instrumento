@@ -6,9 +6,14 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-
+//inicializacion
 var app = express();
-
+//require('./database');
+// connection to db
+const mongoose = require('mongoose');
+mongoose.connect('mongodb+srv://zamarripa:zamarripa@cluster0.usznq.mongodb.net/<dbname>?retryWrites=true&w=majority')
+  .then(db => console.log('Conexion a la base de datos MongoDB Exitosa'))
+  .catch(err => console.log(err));
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Streaming</title>
+  <%- include('../partials/head'); %>
+</head>
+
+<body>
+  <%- include('../partials/navbar'); %>
+
+  <div class="jumbotron jumbotron-fluid" id="numero">
+    <div class="container">
+      <h1 class="display-4">El esta en directo:</h1>
+
+      <!-- Add a placeholder for the Twitch embed -->
+      <div id="twitch-embed"></div>
+
+      <!-- Load the Twitch embed script -->
+      <script src="https://embed.twitch.tv/embed/v1.js"></script>
+
+      <!-- Create a Twitch.Embed object that will render within the "twitch-embed" root element. -->
+      <script type="text/javascript">
+        new Twitch.Embed("twitch-embed", {
+          width: 854,
+          height: 480,
+          channel: "monstercat",
+          // only needed if your site is also embedded on embed.example.com and othersite.example.com
+          parent: ["embed.example.com", "othersite.example.com"]
+        });
+      </script>
+
+    </div>
+  </div>
+
+
+</body>
+
+</html>
