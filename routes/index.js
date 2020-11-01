@@ -18,43 +18,18 @@ router.get('/streaming', function(req, res, ntext){
   res.render('pages/streaming',{page: 'Streaming', menuId:'streaming'});
 });
 //Registro
-router.get('/registro', function(req, res, next){
-  res.render('pages/registro',{page: 'Registro', menuId:'registro'});
-});
-
 //Insercion de los datos
-router.get('/', async (req, res) => {
+router.get('/pokemon', async (req, res) => {
   const Estudiante = await EstudianteSchema.find();
-  res.render('index', {
+  res.render('/pokemon', {
     Estudiante
   });
 });
 router.post('/add', async (req, res, next) => {
   const Estudiante = new EstudianteSchema(req.body);
   await Estudiante.save();
-  res.redirect('/');
+  res.redirect('/pokemon');
 });
-
-//Edición de datos
-router.get('/edit/:id', async (req, res, next) => {
-  const Estudiante = await EstudianteSchema.findById(req.params.id);
-  console.log(Estudiante)
-  res.render('edit', { Estudiante });
-});
-
-router.post('/edit/:id', async (req, res, next) => {
-  const { id } = req.params;
-  await EstudianteSchema.update({_id: id}, req.body);
-  res.redirect('/');
-});
-
-//Elimicación de datos
-router.get('/delete/:id', async (req, res, next) => {
-  let { id } = req.params;
-  await EstudianteSchema.remove({_id: id});
-  res.redirect('/');
-});
-
 
 /* GET home page. */
 router.get('/', function(req, res, next) {

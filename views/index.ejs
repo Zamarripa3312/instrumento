@@ -1,20 +1,76 @@
 <!DOCTYPE html>
-<html lang="es" >
-  <head>
-    <%- include('partials/head'); %>
-  </head>
-  <body>
-    <%- include('partials/navbar'); %>
-    <div class="jumbotron jumbotron-fluid" id="numero">
-      <div class="container">
-        <h1 class="display-4">Bienvenido a mi sitio Web</h1><hr><hr><hr>
-        <p class="lead">En este sitio encontraras varias implementaciones de API's</p>
-        <img src="./images/api.jpg" alt="" width="700">
-        <p>Mi primier sitio basico con Express</p>
+<html lang="es">
+
+<head>
+  <%- include('partials/head'); %>
+</head>
+
+<body>
+  <ul class="nav nav-tabs" id="navbar">
+      <li class="nav-item" id="navbaruno">
+        <a class="nav-link active" href="/">Inicio</a>
+      </li>
+    </ul>
+  <div class="jumbotron jumbotron-fluid" id="numero">
+    <div class="container">
+      <h1 class="display-4">Bienvenido a mi sitio Web</h1>
+      <hr>
+      <hr>
+      <hr>
+      <p class="lead">En este sitio encontraras varias implementaciones de API's</p>
+      <img src="./images/api.jpg" alt="" width="700">
+      <p>Mi primier sitio basico con Express</p>
+      <hr><hr>
+      <h2 id="login2">Registro:</h2>
+      <!-- login -->
+      <div id="login">
+        <div class="container">
+
+          <div class="row">
+
+            <!--FORM-->
+            <div class="col-md-5">
+              <div class="card">
+                <div class="card-body">
+                  <form action="/add" method="post">
+                    <div class="form-group">
+                      <input class="form-control" type="text" name="NumeroDeControl" placeholder="Numero de Control">
+                    </div>
+                    <div class="form-group">
+                      <input class="form-control" type="text" name="Nombre" placeholder="Nombre">
+                    </div>
+                    <div class="form-group">
+                      <input class="form-control" type="text" name="Apellidos" placeholder="Apellidos">
+                    </div>
+                    <div class="form-group">
+                      <input class="form-control" type="text" name="FechaDeNacimiento" placeholder="Fecha de Nacimiento">
+                    </div>
+                    <div class="form-group">
+                      <input class="form-control" type="text" name="Edad" placeholder="Edad">
+                    </div>
+                    <div class="form-group">
+                      <input class="form-control" type="text" name="CiudadDeNacimiento" placeholder="Ciudad de Nacimiento">
+                    </div>
+                    <div class="form-group">
+                    </div>
+                      <button class="btn btn-primary btn-block" type="submit">
+                        Guardar
+                      </button>
+                  </form>
+                </div>
+              </div>
+            </div>
+
+
+
+
       </div>
     </div>
-    <%- include('partials/footer'); %>
+  </div>
 
-    <%- include('partials/script'); %>
-  </body>
+  <%- include('partials/footer'); %>
+
+  <%- include('partials/script'); %>
+</body>
+
 </html>

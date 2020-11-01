@@ -85,3 +85,24 @@ a {
 p {
   margin-top: -60px;
 }
+/*Login*/
+#login{
+  float: inherit;
+  position: relative;
+  top: -400px;
+  left: 750px
+}
+#login2{
+  float: inherit;
+  position: relative;
+  top: -420px;
+  left: 900px
+}
+/*Registro*/
+#registro{
+  text-align: center;
+}
+#imagen{
+  display: block;
+  margin: auto;
+}

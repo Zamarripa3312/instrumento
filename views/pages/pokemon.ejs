@@ -1,27 +1,70 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>Pokemon</title>
-    <%- include('../partials/head'); %>
-  </head>
-  <body>
-    <%- include('../partials/navbar'); %>
 
-    <div class="jumbotron jumbotron-fluid" id="numero">
-      <div class="container">
-        <h1 class="display-4">Busca a tu Pokemon</h1>
-        <img src="./images/logo.png" class="logo" alt="">
-          <div class="contenedor">
-            <input type="text" id="caja" placeholder="Ingrese Un Numero">
-            <button class="text-white btn bg-danger" id="button">Buscar</button>
-            <img src="" id="img" class="pokemon" alt="">
-            <p id="info" class="text-white"></p>
-        </div>
+<head>
+  <meta charset="utf-8">
+  <title>Pokemon</title>
+  <%- include('../partials/head'); %>
+</head>
+
+<body>
+  <%- include('../partials/navbar'); %>
+
+  <div class="jumbotron jumbotron-fluid" id="numero">
+    <div class="container">
+      <div class="">
+        <script src="https://www.paypalobjects.com/api/checkout.js"></script>
+
+        <div id="paypal-button"></div>
+
+        <script>
+          paypal.Button.render({
+            env: 'sandbox', // Or 'production'
+            // Set up the payment:
+            // 1. Add a payment callback
+            payment: function(data, actions) {
+              // 2. Make a request to your server
+              return actions.request.post('/my-api/create-payment/')
+                .then(function(res) {
+                  // 3. Return res.id from the response
+                  return res.id;
+                });
+            },
+            // Execute the payment:
+            // 1. Add an onAuthorize callback
+            onAuthorize: function(data, actions) {
+              // 2. Make a request to your server
+              return actions.request.post('/my-api/execute-payment/', {
+                  paymentID: data.paymentID,
+                  payerID: data.payerID
+                })
+                .then(function(res) {
+                  // 3. Show the buyer a confirmation message.
+                });
+            }
+          }, '#paypal-button');
+        </script>
       </div>
+      <h1 class="display-4">Bienvenido, te has registrado.</h1>
+      <h2>Puedes comenzar buscando un pokemon</h2>
+      <img src="./images/logo.png" class="logo" alt="">
+      <div class="contenedor">
+        <input type="text" id="caja" placeholder="Ingrese Un Numero">
+        <button class="text-white btn bg-danger" id="button">Buscar</button>
+        <img src="" id="img" class="pokemon" alt="">
+        <p id="info" class="text-white"></p>
+      </div>
+
+
     </div>
+  </div>
 
-    <script src="./javascripts/pokemon.js"></script>
 
-  </body>
+  </div>
+  </div>
+  <script src="./javascripts/paypal.js"></script>
+  <script src="./javascripts/pokemon.js"></script>
+
+</body>
+
 </html>
