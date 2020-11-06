@@ -16,5 +16,4 @@ buton.addEventListener('click', () => {
       p.textContent = datoPokemon.name
     }
   }
-
 })
