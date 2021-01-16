@@ -13,7 +13,7 @@ router.get('/', async (req, res) => {
 router.post('/add', async (req, res, next) => {
   const EntrenaPokemon = new EntrenaPokemonSchema(req.body);
   await EntrenaPokemon.save();
-  res.send("Se a agregado exitosamente!!");
+  //res.send("Se a agregado exitosamente!!");
   res.redirect('/entrenaPokemon');
 });
 
@@ -28,7 +28,7 @@ router.get('/editEP/:id', async (req, res, next) => {
 router.post('/editEP/:id', async (req, res, next) => {
   const { id } = req.params;
   await EntrenaPokemonSchema.update({_id: id}, req.body);
-  res.send("Se a editado exitosamente!!");
+  //res.send("Se a editado exitosamente!!");
   res.redirect('/entrenaPokemon');
 });
 
@@ -36,7 +36,7 @@ router.post('/editEP/:id', async (req, res, next) => {
 router.get('/delete/:id', async (req, res, next) => {
   let { id } = req.params;
   await EntrenaPokemonSchema.remove({_id: id});
-  res.send("Se a eliminado exitosamente!!");
+  //res.send("Se a eliminado exitosamente!!");
   res.redirect('/entrenaPokemon');
 });
 

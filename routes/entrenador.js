@@ -14,7 +14,7 @@ router.post('/add', async(req, res, next) => {
     const Entrenador = new EntrenadorSchema(req.body);
     await Entrenador.save();
     console.log("agregado con exito");
-    res.send("Se a agregado exitosamente!!");
+    //res.send("Se a agregado exitosamente!!");
     res.redirect('/entrenador');
 
 });
@@ -28,7 +28,7 @@ router.get('/editE/:id', async (req,res,next) => {
 router.post('/editE/:id',async(req, res, next) => {
     const { id } = req.params;
     await EntrenadorSchema.update({_id: id}, req.body);
-    res.send("Se a editado exitosamente!!");
+    //res.send("Se a editado exitosamente!!");
     res.redirect('/entrenador');
 })
 
@@ -36,7 +36,7 @@ router.post('/editE/:id',async(req, res, next) => {
 router.get('/delete/:id', async(req, res, next) => {
     let { id } = req.params;
     await EntrenadorSchema.remove({_id: id});
-    res.send("Se a eliminado exitosamente!!");
+    //res.send("Se a eliminado exitosamente!!");
     res.redirect('/entrenador');
 })
 
