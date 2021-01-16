@@ -6,12 +6,16 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var entrenadorRouter = require('./routes/entrenador');
+var pokemonPRouter = require('./routes/pokemonP');
+var entrenaPokemonRouter = require('./routes/entrenaPokemon');
+
 //inicializacion
 var app = express();
 //require('./database');
 // connection to db
 const mongoose = require('mongoose');
-mongoose.connect('mongodb+srv://zamarripa:zamarripa@cluster0.usznq.mongodb.net/<dbname>?retryWrites=true&w=majority')
+mongoose.connect('mongodb+srv://zamarripa:zamarripa@cluster0.hf7vo.mongodb.net/Mundo?retryWrites=true&w=majority')
   .then(db => console.log('Conexion a la base de datos MongoDB Exitosa'))
   .catch(err => console.log(err));
 // view engine setup
@@ -26,6 +30,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/entrenador', entrenadorRouter);
+app.use('/pokemonP', pokemonPRouter);
+app.use('/entrenaPokemon', entrenaPokemonRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

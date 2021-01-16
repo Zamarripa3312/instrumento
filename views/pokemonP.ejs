@@ -1,0 +1,78 @@
+<% include ./partials/_header %>
+
+<div class="container">
+
+    <div class="row">
+      <!--FORM-->
+      <div class="col-md-5">
+        <div class="card">
+          <div class="card-body">
+            <form action="./pokemonP/add" method="post">
+              <div class="form-group">
+                <input class="form-control" type="text" name="NoPokemon" placeholder="Numero de Pokemon">
+              </div>
+              <div class="form-group">
+                <input class="form-control" type="text" name="Nombre" placeholder="Nombre">
+              </div>
+              <div class="form-group">
+                <input class="form-control" type="text" name="Descripcion" placeholder="Descripcion">
+              </div>
+              <div class="form-group">
+                <input class="form-control" type="text" name="Ataque" placeholder="Ataque">
+              </div>
+              <div class="form-group">
+                <input class="form-control" type="text" name="Defensa" placeholder="Defensa">
+              </div>
+              <div class="form-group">
+              </div>
+              <button class="btn btn-primary btn-block" type="submit">
+                Guardar
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+  
+      <!-- LIST -->
+      <div class="col-md-7">
+        <table class="table table-bordered table-hover">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Numero del pokemon</th>
+              <th>Nombre</th>
+              <th>Descripcion</th>
+              <th>Ataque</th>
+              <th>Defensa</th>
+              <th>Opciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% for(var i=0; i < Pokemon.length; i++) { %>
+              <tr>
+                <td><%= i + 1%></td>
+                <td><strong><%= Pokemon[i].NoPokemon %></strong></td>
+                <td><%= Pokemon[i].Nombre %></td>
+                <td><%= Pokemon[i].Descripcion %></td>
+                <td><%= Pokemon[i].Ataque %></td>
+                <td><%= Pokemon[i].Defensa %></td>
+                <td>
+                  <a
+                    
+                  <a href="./pokemonP/delete/<%= Pokemon[i]._id %>"
+                    class="btn btn-danger">
+                    Eliminar
+                  </a>
+                  <a href="./pokemonP/editP/<%= Pokemon[i]._id %>" class="btn btn-info">
+                    Editar
+                  </a>
+                </td>
+              </tr>
+            <% } %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+<% include ./partials/footer %>

@@ -1,0 +1,78 @@
+<% include ./partials/_header %>
+
+<div class="container">
+
+    <div class="row">
+      <!--FORM-->
+      <div class="col-md-5">
+        <div class="card">
+          <div class="card-body">
+            <form action="./entrenaPokemon/add" method="post">
+              <div class="form-group">
+                <input class="form-control" type="text" name="NoEntrenador" placeholder="Numero de Entrenador">
+              </div>
+              <div class="form-group">
+                <input class="form-control" type="text" name="NoPokemon" placeholder="Numero de Pokemon">
+              </div>
+              <div class="form-group">
+                <input class="form-control" type="text" name="Equipo" placeholder="Equipo">
+              </div>
+              <div class="form-group">
+                <input class="form-control" type="text" name="Inicio" placeholder="Inicio">
+              </div>
+              <div class="form-group">
+                <input class="form-control" type="text" name="Fin" placeholder="Fin">
+              </div>
+              <div class="form-group">
+              </div>
+              <button class="btn btn-primary btn-block" type="submit">
+                Guardar
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+  
+      <!-- LIST -->
+      <div class="col-md-7">
+        <table class="table table-bordered table-hover">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Numero del pokemon</th> 
+              <th>Numero del entrenador</th>
+              <th>Equipo</th>
+              <th>Inicio</th>
+              <th>Fin</th>
+              <th>Opciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% for(var i=0; i < EntrenaPokemon.length; i++) { %>
+              <tr>
+                <td><%= i + 1%></td>
+                <td><strong><%= EntrenaPokemon[i].NoEntrenador %></strong></td>
+                <td><%= EntrenaPokemon[i].NoPokemon %></td>
+                <td><%= EntrenaPokemon[i].Equipo %></td>
+                <td><%= EntrenaPokemon[i].Inicio %></td>
+                <td><%= EntrenaPokemon[i].Fin %></td>
+                <td>
+                  <a
+                    
+                  <a href="./entrenaPokemon/delete/<%= EntrenaPokemon[i]._id %>"
+                    class="btn btn-danger">
+                    Eliminar
+                  </a>
+                  <a href="./entrenaPokemon/editEP/<%= EntrenaPokemon[i]._id %>" class="btn btn-info">
+                    Editar
+                  </a>
+                </td>
+              </tr>
+            <% } %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+<% include ./partials/footer %></div>
